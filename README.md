@@ -2,7 +2,7 @@
 
 This is a backend API builds in Nodejs for online store.
 
-The database schema and API Route information can be found in [REQUIREMENT.md](REQUIREMENT.md)
+The database schema and API Route information can be found in [REQUIREMENT.md](REQUIREMENTS.md)
 
 ## Installation Instructions
 To install all packages.
