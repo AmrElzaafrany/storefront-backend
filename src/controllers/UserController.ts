@@ -32,8 +32,15 @@ UserController.post('/create-user', checkAuthHeader, async (req: Request, res: R
             res.send("Some required parameters are missing!");
             return false;
         }
-        const newUser: UserType = await user.createUser(req.body);
-        return res.json(authToken(newUser));
+
+        if(!await user.checkUsernameExist(username)) {
+            const newUser: UserType = await user.createUser(req.body);
+            return res.json(authToken(newUser));
+        } else {
+            res.status(400)
+            res.send("Username is exist")
+        }
+
     } catch (err) {
 
         res.status(400);
